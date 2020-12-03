@@ -6,6 +6,8 @@ RUN apt-get update
 
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
+    apt-utils \
+    build-essential \
     libudev-dev \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
