@@ -37,6 +37,7 @@ services:
     volumes:
       - .:/app:delegated
     working_dir: /app
+    privileged: true
 
   redis:
     image: redis:3
