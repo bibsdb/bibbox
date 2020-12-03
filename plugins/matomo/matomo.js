@@ -36,6 +36,11 @@ module.exports = function (options, imports, register) {
       return;
     }
 
+    // agms - bibsdb
+    if (action != 'Checkout - Failure') {
+      return;
+    }
+
     matomo.track({
       url: matomoConfig.clientAddress,
       e_c: category,
