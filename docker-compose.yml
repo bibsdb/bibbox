@@ -38,6 +38,8 @@ services:
       - .:/app:delegated
     working_dir: /app
     privileged: true
+    extra_hosts:
+      - 'bibbox-statistik.teknik.local:10.176.0.26'
 
   redis:
     image: redis:3
