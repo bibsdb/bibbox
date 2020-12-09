@@ -1,5 +1,5 @@
 node_modules
-config.json
+test/config.json
 *.log
 logs/*.*.*
 .DS_Store
