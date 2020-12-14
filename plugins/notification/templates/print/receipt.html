@@ -48,10 +48,7 @@
   </div>
 
   {% for patron in patrons %}
-    <!-- The users name -->
-    <div class="borrower">
-      <strong>{{ 'receipt.user'|translate }}</strong> {{ patron.name }}
-    </div>
+    <!-- Don't print the users name (bibsdb) -->
 
     {% if patron.loans_new %}
     <div class="row new-loans line">
