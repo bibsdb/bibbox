@@ -37,6 +37,7 @@ body {
   text-align: center;
   max-height: 750px;
   overflow: hidden;
+  width: 1500px;
 }
 
 .language-icon {
