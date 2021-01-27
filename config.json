@@ -3,7 +3,7 @@
   "allowed": [ "bibbox.vm:*", "localhost:*", "0.0.0.0:*" ],
   "barcode": {
     "vid": 1529,
-    "pid": 8710
+    "pid": 8726
   },
   "eventTimeout": 500,
   "proxy": {
