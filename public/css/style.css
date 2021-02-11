@@ -21,23 +21,23 @@ body {
 
 .button {
   min-width: 200px;
-  font-size: 1.6em;
-  padding: .6em;
-  margin: 1em;
+  font-size: 2.4em;
+  padding: .9em;
+  margin: 1.5em;
 }
 
 .button-small {
-  min-width: 110px;
-  font-size: 1.3em;
-  padding: .6em;
-  margin: 1em;
+  min-width: 165px;
+  font-size: 1.95em;
+  padding: .9em;
+  margin: 1.5em;
 }
 
 .container {
   text-align: center;
   max-height: 750px;
   overflow: hidden;
-  width: 1500px;
+  width: 1920px;
 }
 
 .language-icon {
@@ -62,43 +62,43 @@ body {
 }
 
 .numpad-key {
-  width: 80px;
-  height: 80px;
-  font-size: 1.8em;
-  padding: .7em;
-  margin: 5px;
+  width: 120px;
+  height: 120px;
+  font-size: 2.7em;
+  padding: 1.05em;
+  margin: 7px;
 }
 
 .numpad-container {
   text-align: center;
   margin: 0 auto;
-  padding: 1em;
-  width: 450px;
+  padding: 1.5em;
+  width: 675px;
 }
 
 .numpad-key-zero {
-  width: 270px;
-  height: 80px;
-  font-size: 1.8em;
-  padding: .7em;
-  margin: 5px;
+  width: 405px;
+  height: 120px;
+  font-size: 2.7em;
+  padding: 1.05em;
+  margin: 7px;
 }
 
 .numpad-enter {
-  width: 120px;
-  height: 260px;
-  font-size: 1.8em;
-  padding: .7em;
-  padding-top: 3.8em;
-  margin: 5px;
+  width: 180px;
+  height: 390px;
+  font-size: 2.7em;
+  padding: 1.05em;
+  padding-top: 5.7em;
+  margin: 7px;
 }
 
 .numpad-back {
-  width: 120px;
-  height: 80px;
-  font-size: 1.8em;
-  padding: .7em;
-  margin: 5px;
+  width: 180px;
+  height: 120px;
+  font-size: 2.7em;
+  padding: 1.05em;
+  margin: 7px;
 }
 
 .numpad-float {
@@ -323,13 +323,13 @@ h4 {
 }
 
 .numpad-input-group > .input-group-addon {
-  font-size: 1.6em;
-  height: 60px;
+  font-size: 2.4em;
+  height: 90px;
 }
 
 .numpad-input-group > .form-control {
-  font-size: 1.6em;
-  height: 60px;
+  font-size: 2.4em;
+  height: 90px;
 }
 
 .header-headline {
