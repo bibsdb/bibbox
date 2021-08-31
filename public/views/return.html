@@ -9,9 +9,9 @@
 
   <div data-ng-include="'/views/processing.html'"></div>
 
-  <div class="row" data-ng-if="materials && materials.length > 0">
-    <div class="col-md-4" data-ng-repeat="(key, bin) in returnBins">
-      <div class="panel panel-default">
+  <div class="row" data-ng-if="materials && materials.length > 0" style="padding: 20px;">
+    <div data-ng-repeat="(key, bin) in returnBins">
+      <div class="panel panel-default col-sm" data-ng-if="bin.materials && bin.materials.length > 0">
         <div class="panel-heading"
              data-ng-style="{ 'background': (bin.background_color ? bin.background_color : null), 'color': (bin.color ? bin.color : null)}">
           <h4>{{ 'return.bin.' + key | translate  }}</h4>
@@ -32,6 +32,7 @@
             </td>
           </tr>
         </table>
+      </div>
       </div>
 
       <ul uib-pagination
