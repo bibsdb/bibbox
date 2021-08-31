@@ -75,6 +75,7 @@
 
   <div class="error-content">
     <span class="error">{{ 'out_of_order.text' | translate }}</span>
+    <div><a class="button" href="https://bibbox.sonderborg.dk/reboot">{{ 'reboot_bibbox.text' | translate }}</a></div>
     <div ng-if="debug" ng-repeat="outOfOrderLock in outOfOrderLocks">
       <span class="error">{{ outOfOrderLock }}</span>
     </div>
