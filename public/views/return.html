@@ -9,9 +9,9 @@
 
   <div data-ng-include="'/views/processing.html'"></div>
 
-  <div class="row" data-ng-if="materials && materials.length > 0" style="padding: 20px;">
-    <div data-ng-repeat="(key, bin) in returnBins">
-      <div class="panel panel-default col-sm" data-ng-if="bin.materials && bin.materials.length > 0">
+  <div class="row" data-ng-if="materials && materials.length > 0" style="display:flex; flex-wrap: nowrap; margin: 0 -10px">
+    <div style="flex-grow: 1; flex-basis: 0; margin: 0 10px" data-ng-repeat="(key, bin) in returnBins" data-ng-if="bin.materials && bin.materials.length > 0">
+      <div class="panel panel-default">
         <div class="panel-heading"
              data-ng-style="{ 'background': (bin.background_color ? bin.background_color : null), 'color': (bin.color ? bin.color : null)}">
           <h4>{{ 'return.bin.' + key | translate  }}</h4>
