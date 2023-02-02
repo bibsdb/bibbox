@@ -1,0 +1,21 @@
+{
+  "name": "crypt",
+  "description": "Helper plugin to encrypt and decrypt data",
+  "version": "0.0.1",
+  "main": "crypt.js",
+  "private": true,
+  "plugin": {
+    "consumes": [
+      "bus",
+      "ctrl"
+    ],
+    "provides": [
+      "crypt"
+    ]
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "sync-request": "^6.1.0",
+    "uniqid": "^4.1.0"
+  }
+}

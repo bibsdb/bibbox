@@ -7,7 +7,8 @@
   "plugin": {
     "consumes": [
       "bus",
-      "ctrl"
+      "ctrl",
+      "crypt"
     ],
     "provides": [
       "fbs"
@@ -15,7 +16,7 @@
   },
   "dependencies": {
     "debug": "^2.2.0",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "html-entities": "^1.2.0",
     "q": "^1.4.1",
     "request": "^2.75.0",
