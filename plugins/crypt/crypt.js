@@ -22,8 +22,8 @@ const Crypt = function Crypt(bus) {
     'private': false,
     'url': ''
   };
-
-  this.debug_certs = process.env.CERTS_DEBUG || false;
+  // Bibsdb - always load certs locally
+  this.debug_certs = process.env.CERTS_DEBUG || './certs';
   debug('Local certificates requested loaded from: ' + this.debug_certs);
 
   // Load configuration.
