@@ -23,7 +23,7 @@ const Crypt = function Crypt(bus) {
     'url': ''
   };
   // Bibsdb - always load certs locally
-  this.debug_certs = process.env.CERTS_DEBUG || './certs';
+  this.debug_certs = process.env.CERTS_DEBUG || '/home/superuser/bibbox/certs';
   debug('Local certificates requested loaded from: ' + this.debug_certs);
 
   // Load configuration.
