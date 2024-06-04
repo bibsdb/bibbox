@@ -129,6 +129,11 @@ body {
   max-width: 300px;
 }
 
+.table tbody > tr > td.ready {
+  background-color: green;
+  color: white;
+}
+
 .td-center {
   text-align: center;
 }

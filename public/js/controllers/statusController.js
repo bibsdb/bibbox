@@ -24,6 +24,7 @@ angular.module('BibBox').controller('StatusController', [
 
     $scope.materials = [];
     $scope.fineItems = [];
+    $scope.reservations = [];
     $scope.currentPatron = null;
 
     // Pager config.
@@ -62,6 +63,24 @@ angular.module('BibBox').controller('StatusController', [
             $scope.materials[j].fineItem = $scope.currentPatron.fineItems[i];
             break;
           }
+        }
+      }
+
+      // Add res ready for pickup.
+      if ($scope.currentPatron.hasOwnProperty('holdItems')) {
+        for (i = 0; i < $scope.currentPatron.holdItems.length; i++) {
+          item = angular.copy($scope.currentPatron.holdItems[i]);
+          item.ready = true;
+          $scope.reservations.push(item);
+        }
+      }
+
+      // Add res in queue.
+      if ($scope.currentPatron.hasOwnProperty('unavailableHoldItems')) {
+        for (i = 0; i < $scope.currentPatron.unavailableHoldItems.length; i++) {
+          item = angular.copy($scope.currentPatron.unavailableHoldItems[i]);
+          item.ready = false;
+          $scope.reservations.push(item);
         }
       }
     }, function (err) {
@@ -201,6 +220,20 @@ angular.module('BibBox').controller('StatusController', [
       $modal({
         scope: $scope,
         templateUrl: './views/modal_receipt.html',
+        show: true,
+        onHide: function (modal) {
+          modal.destroy();
+        }
+      });
+    };
+
+    /**
+     * Show reservations modal.
+     */
+    $scope.showReservationsModal = function showReservationsModal() {
+      $modal({
+        scope: $scope,
+        templateUrl: './views/modal_reservations.html',
         show: true,
         onHide: function (modal) {
           modal.destroy();

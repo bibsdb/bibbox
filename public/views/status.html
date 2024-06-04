@@ -73,5 +73,11 @@
             analytics-event="Renew All">
       <span class="glyphicon glyphicon-refresh"></span> {{ 'status.button.renew_all' | translate }}
     </button>
+
+    <button type="button" class="btn btn-success button align-right" aria-label="Left Align" data-ng-click="showReservationsModal()" data-ng-if="currentPatron && reservations && reservations.length > 0"
+            analytics-on analytics-category="Reservations" analytics-label="Button Click"
+            analytics-event="Reservations">
+      <span class="glyphicon glyphicon-list-alt"></span> {{ 'menu.reservations' | translate }}
+    </button>
   </div>
 </div>

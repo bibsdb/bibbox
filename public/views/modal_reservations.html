@@ -1,0 +1,47 @@
+<div class="modal text-center">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="reservationsModalLabel">{{ 'reservations.heading' | translate }}</h2>
+      </div>
+      <div class="modal-body">
+        <table class="table" data-ng-if="reservations.length > 0">
+          <thead>
+            <tr>
+              <th>{{ 'reservations.bibliographic_id' | translate }}</th>
+              <th>{{ 'reservations.author' | translate }}</th>
+              <th>{{ 'reservations.title' | translate }}</th>
+              <th>{{ 'reservations.pickup_location' | translate }}</th>
+              <th>{{ 'reservations.pickup_number' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="material in reservations"
+              data-ng-if="$index >= (pager.currentPage - 1) * pager.itemsPerPage && $index < pager.currentPage * pager.itemsPerPage">
+              <td class="vert-align">{{ material.id }}</td>
+              <td class="vert-align">{{ material.author }}</td>
+              <td class="vert-align">{{ material.title }}</td>
+              <td class="vert-align">{{ material.pickupLocation }}</td>
+              <td class="vert-align" ng-class="{'ready': material.ready}">{{ material.ready ? material.pickupId :
+                'reservations.in_queue' | translate }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <ul uib-pagination data-ng-if="reservations.length > pager.itemsPerPage" class="align-right"
+          boundary-link-numbers="true" max-size="3" previous-text="<" next-text=">" total-items="reservations.length"
+          items-per-page="pager.itemsPerPage" ng-model="pager.currentPage">
+        </ul>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-danger button" data-ng-click="$hide()" analytics-on
+          analytics-category="Modal Receipt" analytics-event="Close" analytics-label="Button Click">
+          {{ 'receipt.button.close' | translate }}
+        </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
