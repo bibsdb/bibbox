@@ -244,14 +244,14 @@ angular.module('BibBox').controller('StatusController', [
     /**
      * Detect if the receipt button should be enabled.
      *
+     * Getting a receipt should always be possible.
+     * It is a way for users to aquire insight into their obligations towards the library.
+     * A blank receipt can be a valuable insight.
+     *
      * @return {boolean}
      */
     $scope.enableReceiptBtn = function showReceiptBtn() {
-      if ($scope.currentPatron !== null && parseInt($scope.currentPatron.feeAmount) > 0) {
-        return true;
-      }
-
-      return $scope.hasOwnProperty('materials') && $scope.materials.length !== 0;
+      return true;
     };
 
     /**
