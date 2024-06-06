@@ -7,7 +7,7 @@
 {% if item.title %}
 {{ item.title }}
 {% endif %}
-{{ 'receipt.fines.date'|translate }} {{ (item.fineDate/1000)|date("d/m/y") }} {{ 'receipt.fines.amount'|translate }} {{ item.fineAmount }}
+{{ 'receipt.fines.date'|translate }} {{ (item.fineDate/1000)|date("d/m/y") }} {{ 'receipt.fines.amount'|translate }} {{ item.fineAmount|number_format(2, ',', '.') }} kr.
 
 {% endfor %}
-{{ 'receipt.fines.total'|translate }} {{ total }}
+{{ 'receipt.fines.total'|translate }} {{ total|number_format(2, ',', '.') }} kr.
