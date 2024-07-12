@@ -119,7 +119,10 @@ FBS.prototype.login = function login(username, password) {
           deferred.resolve();
         }
       }
-      else {
+      else {      
+        if (res.validPatron === 'Y') {
+          deferred.reject(new Error('login.invalid_password'));
+        }
         deferred.reject(new Error('login.invalid_login_error'));
       }
     }

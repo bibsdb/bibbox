@@ -3,7 +3,20 @@
 <spinner-global data-ng-if="loading"></spinner-global>
 
 <div class="container">
-  <div class="alert alert-danger" role="alert" data-ng-if="invalidLoginError">
+  <div class="alert alert-danger" role="alert" data-ng-if="invalidLoginErrorMessage === 'login.invalid_login_error'">
+    <span class="glyphicon glyphicon-exclamation-sign"
+          aria-hidden="true"></span>
+    {{ invalidLoginErrorMessage | translate }}
+  </div>
+
+  <div class="alert alert-danger" role="alert" data-ng-if="invalidLoginErrorMessage === 'login.invalid_password'">
+    <span class="glyphicon glyphicon-exclamation-sign"
+          aria-hidden="true"></span>
+    {{ invalidLoginErrorMessage | translate }} <br/>
+    {{ 'login.attempts_info_one' | translate }} {{ attemptsMax }} {{ 'login.attempts_info_two' | translate }}
+  </div>
+
+  <div class="alert alert-danger" role="alert" data-ng-if="invalidLoginErrorMessage === 'login.invalid_login_blocked'">
     <span class="glyphicon glyphicon-exclamation-sign"
           aria-hidden="true"></span>
     {{ invalidLoginErrorMessage | translate }}

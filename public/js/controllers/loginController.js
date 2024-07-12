@@ -132,8 +132,8 @@ angular.module('BibBox').controller('LoginController', ['$scope', '$controller',
 
           resetScope();
           gotoStep('start');
-
           $scope.invalidLoginErrorMessage = err.message;
+          $scope.attemptsMax = config.loginAttempts.max;
           $scope.invalidLoginError = true;
           $scope.loading = false;
         }
