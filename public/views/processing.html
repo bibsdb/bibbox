@@ -9,4 +9,47 @@
       <span data-ng-if="baseGetErrorResults() === 0">{{ 'processing.button.status' | translate }}</span>
     </button>
   </div>
+  <div class="panel panel-default" data-ng-if="baseGetErrorResults() > 0">
+    <table class="table">
+      <tr data-ng-repeat="material in materials"
+          data-ng-class="{'bg-danger': materials.invalid || material.status === 'error'}"
+          data-ng-if="!material.success">
+        <td>
+        <span class="vert-align" ng-if="material.offline"><span class="glyphicon glyphicon-exclamation-sign"
+          aria-hidden="true"></span> <b>"{{ 'fbs.offline.title' | translate }}"</b></span>
+        <span class="vert-align" ng-if="!material.offline"><span class="glyphicon glyphicon-exclamation-sign"
+          aria-hidden="true"></span> <b>"{{ material.title }}"</b></span>
+        
+          <spinner data-ng-if="material.loading"></spinner>
+          <span data-ng-if="material.seriesLength > 0 && material.tags.length === material.seriesLength">
+
+            <!-- Materialet er reserveret til en anden låner -->
+            <span data-ng-if="material.information.indexOf('Materialet er reserveret til en anden låner') !== -1">
+              <b>er ikke reserveret til dig</b><br>
+              - Du kan ikke hente for andre. Reserveringer kan kun udlånes til den person, der lavede reserveringen. <br>
+              - Der kan godt være flere af den samme titel på reserveringshylderne. Det er vigtigt, at du tager fra den rigtige hylde. Tjek din reserveringsbesked.<br>
+            </span>
+
+            <!-- Forny ikke mulig pga. afleveringsfrist -->
+            <span data-ng-if="material.information.indexOf('Kan først fornyes') !== -1">
+              <b>kan ikke fornyes</b><br>
+              - Først 10 dage inden afleveringsfristen kan du forny. <br>
+            </span>
+
+            <!-- Kasseret -->
+            <span data-ng-if="material.information.indexOf('Materialet er kasseret') !== -1">
+              <b>mangler i systemet.</b><br>
+              - Henvend dig til personalet og få fejlen rettet. Tak for hjælpen. <br>
+            </span>
+
+
+          </span>
+          <span data-ng-if="material.seriesLength > 0 && material.tags.length < material.seriesLength">
+            {{ material.tags.length }} / {{ material.seriesLength }} {{ 'processing.materials_scanned' | translate }}
+          </span>
+          <span data-ng-if="material.invalid">{{ 'processing.invalid_material' | translate }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
