@@ -12,8 +12,7 @@
   <div class="alert alert-danger" role="alert" data-ng-if="invalidLoginErrorMessage === 'login.invalid_password'">
     <span class="glyphicon glyphicon-exclamation-sign"
           aria-hidden="true"></span>
-    {{ invalidLoginErrorMessage | translate }} <br/>
-    {{ 'login.attempts_info_one' | translate }} {{ attemptsMax }} {{ 'login.attempts_info_two' | translate }}
+    {{ invalidLoginErrorMessage | translate }}
   </div>
 
   <div class="alert alert-danger" role="alert" data-ng-if="invalidLoginErrorMessage === 'login.invalid_login_blocked'">

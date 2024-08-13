@@ -93,7 +93,7 @@ angular.module('BibBox').value('config', {
     IdleWarn: 5
   },
   loginAttempts: {
-    max: 5,
+    max: 20,
     timeLimit: 15 * 60 * 1000
   },
   testFbsConnectionInterval: 2000
